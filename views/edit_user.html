@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <title>Edit User</title>
+
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+  <link rel="stylesheet" type="text/css" href="/css/bootstrap.css" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Poppins:400,700&display=swap" rel="stylesheet">
+  <link href="/css/style.css" rel="stylesheet" />
+  <link href="/css/responsive.css" rel="stylesheet" />
+</head>
+
+<body class="sub_page">
+  <div class="hero_area">
+    <header class="header_section">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg custom_nav-container pt-3">
+          <a class="navbar-brand" href="home.html">
+            <span>서비스 이름</span>
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
+              <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="user.html">회원관리</a></li>
+                <li class="nav-item"><a class="nav-link" href="mobility.html">모빌리티</a></li>
+                <li class="nav-item"><a class="nav-link" href="station.html">대여소</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">고객지원</a></li>
+              </ul>
+              <div class="user_option">
+                <a href=""><img src="/images/user.png" alt=""></a>
+                <form class="form-inline my-2 my-lg-0 ml-0 ml-lg-4 mb-3 mb-lg-0">
+                  <button class="btn my-2 my-sm-0 nav_search-btn" type="submit"></button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+  </div>
+
+  <section class="user_edit_section layout_padding">
+    <div class="container">
+      <div class="heading_container heading_center spacing">
+        <h2>회원 정보 수정</h2>
+      </div>
+      <div class="user_edit_form">
+        <form id="editUserForm">
+          <div class="form-group">
+            <label for="userId">회원 번호(ID)</label>
+            <input type="text" class="form-control" id="userId" name="userId" readonly>
+          </div>
+          <div class="form-group">
+            <label for="userName">이름</label>
+            <input type="text" class="form-control" id="userName" name="userName">
+          </div>
+          <div class="form-group">
+            <label for="userBirth">생년월일</label>
+            <input type="date" class="form-control" id="userBirth" name="userBirth">
+          </div>
+          <div class="form-group">
+            <label for="userContact">연락처</label>
+            <input type="text" class="form-control" id="userContact" name="userContact">
+          </div>
+          <div class="form-group">
+            <label for="userJoinDate">가입일</label>
+            <input type="datetime-local" class="form-control" id="userJoinDate" name="userJoinDate" readonly>
+          </div>
+          <div class="form-group">
+            <label for="userRentRight">대여 권한</label>
+            <input type="text" class="form-control" id="userRentRight" name="userRentRight">
+          </div>
+          <div class="form-group">
+            <label for="userState">회원 상태</label>
+            <input type="text" class="form-control" id="userState" name="userState">
+          </div>
+          <div class="form-group">
+            <label for="userWithdrawalDate">탈퇴 신청일</label>
+            <input type="datetime-local" class="form-control" id="userWithdrawalDate" name="userWithdrawalDate">
+          </div>
+          <button type="submit" class="btn btn-primary">정보 수정</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <script type="text/javascript" src="/js/jquery-3.4.1.min.js"></script>
+  <script type="text/javascript" src="/js/bootstrap.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <script type="text/javascript" src="/js/edit_user.js"></script>
+</body>
+
+</html>
