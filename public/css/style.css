@@ -1,4 +1,117 @@
 body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 0;
+}
+
+.mo_container {
+  width: 500px;
+  height: 780px;
+  margin: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  position: absolute;
+  left: 20px;
+  z-index: 10;
+}
+
+.header {
+  background-color: #7ab4d3;
+  padding: 10px;
+  text-align: center;
+}
+
+.header h2 {
+  color: white;
+  margin: 0;
+}
+
+.content {
+  padding: 20px;
+}
+
+.tab-button {
+  background-color: #1c87c9;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.info-box {
+  border-top: 1px solid #e0e0e0;
+  padding-top: 10px;
+  background-color: #ffffff;
+  padding: 20px;
+  margin-bottom: 5px;
+  border-radius: 10px; /* 직사각형 모서리를 둥글게 설정 */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 그림자 효과 */
+}
+.divider {
+  border-bottom: 1px solid #e0e0e0; /* 구분선 */
+  margin: 10px 0; /* 구분선의 여백 */
+}
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 0;
+}
+.maintenance-textbox {
+  width: 100%;
+  height: 300px;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 1em;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  resize: none; /* 사용자가 크기를 조정하지 못하도록 설정 */
+}
+.label.bold {
+  font-weight: bold; /* 'bold' 클래스를 가진 라벨을 두껍게 설정 */
+  color: #333; /* 좀 더 진한 색상 */
+}
+.label {
+  font-weight: lighter;
+  color: #8A8181;
+}
+
+.value-status {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex: 1;
+}
+
+.value {
+  color: #333;
+  margin-right: 10px;
+}
+
+.status, .battery-status {
+  background-color: #2C8FF7;
+  color: white;
+  padding: 2px 10px;
+  border-radius: 5px;
+  font-size: 0.9em;
+}
+
+.battery-status {
+  background-color: #E8F9E5;
+}
+.battery-status.percent {
+  color : #27C077;
+}
+.info-row .value, .info-row .status {
+  margin-left: 10px;
+}
+
+body {
   font-family: "Poppins", sans-serif;
   color: #000000;
   background-color: #ffffff;
@@ -35,6 +148,7 @@ a:focus {
   background-position-y: 7px;
   width: 35px;
   height: 35px;
+  margin-bottom: 5px;
   padding: 0;
   border: none;
 }
@@ -73,7 +187,7 @@ a:focus {
 }
 
 .custom_nav-container.navbar-expand-lg .navbar-nav .nav-link::before {
-  content: "";
+  content: none;
   position: absolute;
   top: 50%;
   left: -2px;
@@ -82,14 +196,6 @@ a:focus {
   height: 7px;
   border-radius: 100%;
   background-color: #ffffff;
-}
-
-.custom_nav-container.navbar-expand-lg .navbar-nav .nav-link.active {
-  color: #1E87AC;
-}
-
-.custom_nav-container.navbar-expand-lg .navbar-nav .nav-link.active::before {
-  background-color: #1E87AC;
 }
 
 .hero_area {
@@ -153,10 +259,6 @@ body:not(.home-page) .custom_nav-container .navbar-nav .nav-link.active::before 
   background-color: #1E87AC;
 }
 
-#registMap {width:100%; height:100%; position:relative; float:left;}
-#registMap .registMap {width:500px; height:96%; position:absolute; left:1%; top:2%; background-color:rgb(255, 255, 255); z-index:99; padding:10px; overflow:auto;}
-#map {width:100%;height:100%; position:absolute; top:0px; left:0px; z-index:1}
-
 body.home-page .custom_nav-container .navbar-nav .nav-link {
   color: #ffffff;
   font-size: 20px;
@@ -173,6 +275,61 @@ body.home-page .custom_nav-container .navbar-nav .nav-link::before {
 
 body.home-page .custom_nav-container .navbar-nav .nav-link.active::before {
   color: #1E87AC;
+}
+.custom_nav-container .navbar-nav .nav-link {
+  color: #ffffff;
+  font-size: 20px;
+  position: relative;
+}
+
+.custom_nav-container .navbar-nav .nav-link::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -2px;
+  transform: translate(-50%, -50%);
+  width: 7px;
+  height: 7px;
+  border-radius: 100%;
+  background-color: transparent; /* 점을 투명하게 만듦 */
+}
+
+/* 홈 페이지 스타일 */
+body.home-page .custom_nav-container .navbar-nav .nav-link {
+  color: #ffffff;
+}
+
+body.home-page .custom_nav-container .navbar-nav .nav-link.active {
+  color: #1E87AC;
+}
+
+body.home-page .custom_nav-container .navbar-nav .nav-link::before {
+  background-color: transparent;
+}
+
+body.home-page .custom_nav-container .navbar-nav .nav-link.active::before {
+  background-color: #1E87AC;
+}
+
+/* 다른 페이지 스타일 */
+body:not(.home-page) .header_section {
+  background-color: #000000;
+}
+
+body:not(.home-page) .custom_nav-container .navbar-nav .nav-link {
+  color: #ffffff;
+}
+
+body:not(.home-page) .custom_nav-container .navbar-nav .nav-link.active {
+  color: #1E87AC;
+}
+
+body:not(.home-page) .custom_nav-container .navbar-nav .nav-link::before {
+  background-color: transparent;
+}
+
+body:not(.home-page) .custom_nav-container .navbar-nav .nav-link.active::before {
+  background-color: #1E87AC;
 }
 
 .spacing {
