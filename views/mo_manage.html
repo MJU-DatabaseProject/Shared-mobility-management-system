@@ -54,7 +54,7 @@
                   <a class="nav-link" href="mobility.html">모빌리티</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link active" href="station.html">대여소</a>
+                  <a class="nav-link active" href="mo_manage.html">모빌리티 관리</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="contact.html">고객 지원</a>
@@ -70,15 +70,52 @@
         </nav>
       </div>
     </header>
-    
   </div>
+  <section class="member_section layout_padding">
+    <div class="container">
+      <div class="heading_container heading_center spacing">
+        <h2>모빌리티 관리</h2>
+      </div>
+      <div class="member_search spacing">
+        <form id="searchForm" class="form-inline my-2 my-lg-0 ml-0 mb-3 mb-lg-0">
+          <input id="searchInput" class="form-control mr-sm-2" type="search" placeholder="모빌리티 ID로 검색" aria-label="Search">
+          <button class="btn my-2 my-sm-0 nav_search-btn" type="submit">검색</button>
+        </form>
+      </div>
+      <div class="table-responsive">
+        <table class="table table-bordered">
+          <thead>
+            <tr>  
+              <th>모빌리티 ID</th>
+              <th>기종</th>
+              <th>대여소</th>
+              <th>배터리</th>
+              <th>상태</th>
+              <th>관리</th>
+            </tr>
+          </thead>
+          <tbody id="mobilityTableBody">
+            <!-- Users will be dynamically loaded here -->
+          </tbody>
+        </table>
+      </div>
+      <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+          <li class="page-item"><a class="page-link" href="#" data-page="1">1</a></li>
+          <li class="page-item"><a class="page-link" href="#" data-page="2">2</a></li>
+          <li class="page-item"><a class="page-link" href="#" data-page="3">3</a></li>
+        </ul>
+      </nav>
+    </div>
+  </section>
 
   
 
   <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
   <script type="text/javascript" src="js/bootstrap.js"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
-  </script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <script type="text/javascript" src="js/mo_manage.js"></script>
+
   <!-- owl carousel script 
     -->
 

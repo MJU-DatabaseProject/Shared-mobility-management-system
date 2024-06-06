@@ -7,9 +7,9 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 const db = mysql.createConnection({
-  host: "localhost",
+  host: "127.0.0.1",
   user: "root",
-  password: "0000",
+  password: "sj19981220",
   database: "Shared_mobility",
 });
 
@@ -31,12 +31,17 @@ const mobilityRoutes = require("./routes/mobility");
 const stationRoutes = require("./routes/station");
 const userRoutes = require("./routes/user");
 const supportRoutes = require("./routes/support");
+const mo_editRoutes = require("./routes/mo_manage");
+
+
 
 // Use routes
 app.use("/api/mobility", mobilityRoutes(db));
 app.use("/api/stations", stationRoutes(db));
 app.use("/api/users", userRoutes(db));
 app.use("/api/support", supportRoutes(db));
+app.use("/api/mo_edit", mo_editRoutes(db));
+
 
 // Serve HTML files
 app.get("/", (req, res) => {
@@ -59,8 +64,8 @@ app.get("/mobility.html", (req, res) => {
   res.sendFile(path.join(__dirname, "views", "mobility.html"));
 });
 
-app.get("/station.html", (req, res) => {
-  res.sendFile(path.join(__dirname, "views", "station.html"));
+app.get("/mo_manage.html", (req, res) => {
+  res.sendFile(path.join(__dirname, "views", "mo_manage.html"));
 });
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
