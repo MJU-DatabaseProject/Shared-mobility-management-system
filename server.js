@@ -9,7 +9,7 @@ const PORT = process.env.PORT || 3000;
 const db = mysql.createConnection({
   host: "127.0.0.1",
   user: "root",
-  password: "mysql",
+  password: "sj19981220",
   database: "Shared_mobility",
 });
 
