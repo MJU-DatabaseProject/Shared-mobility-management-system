@@ -72,6 +72,30 @@ module.exports = (db) => {
     });
   });
   
+  // Add new shared_mo record
+  router.post('/', (req, res) => {
+    const { mo_id, model, stat_id, batt, broken_yn } = req.body;
+    const query = 'INSERT INTO shared_mo (mo_id, model, stat_id, batt, broken_yn) VALUES (?, ?, ?, ?, ?)';
+    db.query(query, [mo_id, model, stat_id, batt, broken_yn], (err, result) => {
+      if (err) {
+        return res.status(500).json({ error: err.message });
+      }
+      res.json({ message: 'Record added', result });
+    });
+  });
+
+  // Add new mobility
+  router.post('/', (req, res) => {
+    const { mo_id, model, stat_id, location_id, manu_date, batt, mo_type, broken_yn, last_main_date } = req.body;
+    const query = 'INSERT INTO shared_mo (mo_id, model, stat_id, location_id, manu_date, batt, mo_type, broken_yn, last_main_date) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)';
+    db.query(query, [mo_id, model, stat_id, location_id, manu_date, batt, mo_type, broken_yn, last_main_date], (err, result) => {
+      if (err) {
+        return res.status(500).json({ error: err.message });
+      }
+      res.json({ message: 'Mobility added', result });
+    });
+  });
+
   // Delete shared_mo record by ID
   router.delete('/:id', (req, res) => {
     const moId = req.params.id;

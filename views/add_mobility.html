@@ -12,7 +12,7 @@
   <meta name="description" content="" />
   <meta name="author" content="" />
 
-  <title>WheelGo</title>
+  <title>Esigned</title>
 
   <!-- slider stylesheet -->
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
@@ -26,9 +26,6 @@
   <link href="/css/style.css" rel="stylesheet" />
   <!-- responsive style -->
   <link href="/css/responsive.css" rel="stylesheet" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Smooch&display=swap" rel="stylesheet">
 </head>
 
 <body class="sub_page">
@@ -38,8 +35,8 @@
       <div class="container-fluid">
         <nav class="navbar navbar-expand-lg custom_nav-container pt-3">
           <a class="navbar-brand" href="home.html">
-            <span class="smooch-regular">
-              WheelGo
+            <span>
+              SkyBirds
               <span class="sr-only">(current)</span>
             </span>
           </a>
@@ -63,61 +60,70 @@
                   <a class="nav-link" href="contact.html">고객 지원</a>
                 </li>
               </ul>
+              <div class="user_option">
+                <a href="">
+                  <img src="images/user.png" alt="">
+                </a>
+              </div>
             </div>
           </div>
         </nav>
       </div>
     </header>
   </div>
-  <section class="member_section layout_padding">
+  <section class="user_edit_section layout_padding">
     <div class="container">
       <div class="heading_container heading_center spacing">
-        <h2>모빌리티 관리</h2>
+        <h2>모빌리티 추가</h2>
       </div>
-      <div class="member_search spacing">
-        <form id="searchForm" class="form-inline my-2 my-lg-0 ml-0 mb-3 mb-lg-0">
-          <input id="searchInput" class="form-control mr-sm-2" type="search" placeholder="모빌리티 ID로 검색" aria-label="Search">
-          <button class="btn my-2 my-sm-0 nav_search-btn" type="submit">검색</button>
-          <button class="btn btn-primary btn-sm" onclick="showAddMobilityForm()">모빌리티 추가</button>
+      <div class="user_edit_form">
+        <form id="addMobilityForm">
+          <div class="form-group">
+            <label for="mo_id">모빌리티 번호</label>
+            <input type="text" class="form-control" id="mo_id" name="mo_id">
+          </div>
+          <div class="form-group">
+            <label for="model">기종</label>
+            <input type="text" class="form-control" id="model" name="model">
+          </div>
+          <div class="form-group">
+            <label for="station_id">대여소 번호</label>
+            <input type="text" class="form-control" id="station_id" name="station_id">
+          </div>
+          <div class="form-group">
+            <label for="location_id">위치 번호</label>
+            <input type="text" class="form-control" id="location_id" name="location_id">
+          </div>
+          <div class="form-group">
+            <label for="manu_date">제조 일자</label>
+            <input type="date" class="form-control" id="manu_date" name="manu_date">
+          </div>
+          <div class="form-group">
+            <label for="batt">배터리</label>
+            <input type="number" class="form-control" id="batt" name="batt">
+          </div>
+          <div class="form-group">
+            <label for="mo_type">종류</label>
+            <input type="text" class="form-control" id="mo_type" name="mo_type">
+          </div>
+          <div class="form-group">
+            <label for="broken_yn">고장 여부</label>
+            <input type="text" class="form-control" id="broken_yn" name="broken_yn">
+          </div>
+          <div class="form-group">
+            <label for="last_main_date">최근 정비 날짜</label>
+            <input type="date" class="form-control" id="last_main_date" name="last_main_date">
+          </div>
+          <button type="submit" class="btn btn-primary">추가</button>
         </form>
       </div>
-      <div class="table-responsive">
-        <table class="table table-bordered">
-          <thead>
-            <tr>  
-              <th>모빌리티 ID</th>
-              <th>기종</th>
-              <th>대여소</th>
-              <th>배터리</th>
-              <th>상태</th>
-              <th>관리</th>
-            </tr>
-          </thead>
-          <tbody id="mobilityTableBody">
-            <!-- Users will be dynamically loaded here -->
-          </tbody>
-        </table>
-      </div>
-      <nav aria-label="Page navigation example">
-        <ul class="pagination justify-content-center">
-          <li class="page-item"><a class="page-link" href="#" data-page="1">1</a></li>
-          <li class="page-item"><a class="page-link" href="#" data-page="2">2</a></li>
-          <li class="page-item"><a class="page-link" href="#" data-page="3">3</a></li>
-        </ul>
-      </nav>
     </div>
   </section>
 
-  
-
-  <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
-  <script type="text/javascript" src="js/bootstrap.js"></script>
+  <script type="text/javascript" src="/js/jquery-3.4.1.min.js"></script>
+  <script type="text/javascript" src="/js/bootstrap.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-  <script type="text/javascript" src="js/mo_manage.js"></script>
-
-  <!-- owl carousel script 
-    -->
-
+  <script type="text/javascript" src="/js/add_mobility.js"></script>
 </body>
 
 </html>

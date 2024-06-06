@@ -15,6 +15,19 @@ document.addEventListener('DOMContentLoaded', () => {
       loadMobilities(page);
     });
   });
+  
+  const addMobilityForm = document.getElementById('addMobilityForm');
+  addMobilityForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const newMobility = {
+      mo_id: document.getElementById('moId').value,
+      model: document.getElementById('model').value,
+      stat_id: document.getElementById('statId').value,
+      batt: document.getElementById('batt').value,
+      broken_yn: document.getElementById('brokenYn').value,
+    };
+    addMobility(newMobility);
+  });
 });
 
 function loadMobilities(page) {
@@ -96,4 +109,24 @@ function deleteMobility(moId) {
     })
     .catch(error => console.error('Error:', error));
   }
+}
+
+function showAddMobilityForm() {
+  window.location.href = 'add_mobility.html';
+}
+
+function addMobility(mobility) {
+  fetch('/api/mo_edit', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(mobility)
+  })
+  .then(response => response.json())
+  .then(data => {
+    alert('모빌리티가 추가되었습니다.');
+    location.reload();
+  })
+  .catch(error => console.error('Error:', error));
 }
